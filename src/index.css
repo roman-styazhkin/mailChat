@@ -1,0 +1,42 @@
+:root {
+  --white: #fff;
+  --wild-sand: #f6f6f6;
+  --silver: #c4c4c4;
+  --chicago: #605e5c;
+  --tuatara: #201f1e;
+  --link-water: #f0f5fb;
+  --mercury: #e4e4e4;
+  --indigo: #407ec9;
+  --concrete: #f3f3f3;
+  --dawn: #a19f9d;
+}
+
+:root {
+  --header-height: 64px;
+  --chat-form-height: 130px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--chicago);
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+/*Убрать полосу прокрутки для всей страницы*/
+::-webkit-scrollbar {
+  width: 0;
+}

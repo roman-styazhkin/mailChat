@@ -1,0 +1,60 @@
+.root {
+    color: var(--tuatara);
+    display: flex;
+    gap: 10px;
+
+    &__photo {
+        width: 32px;
+        height: 32px;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 1;
+        margin-bottom: 7px;
+    }
+
+    &__info {
+        position: relative;
+        padding: 8px 12px;
+        background-color:var(--concrete);
+        max-width: 467px;
+        border-radius: 4px;
+        padding-right: 70px;
+        margin-bottom: 5px;
+    }
+
+    &__bottom {
+        position: absolute;
+        right: 12px;
+        bottom: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__time {
+        color: var(--chicago);
+        font-size: 12px;
+        line-height: 9px;
+        margin-right: 2px;
+    }
+
+    &__status {
+        width: 16px;
+        height: 10px;
+        background-image: url("../../assets/images/status-message.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    &.my {
+        margin-left: auto;
+
+        .root__info {
+            background-color: rgba(#407ec9, 0.16);
+            max-width: 548px;
+        }
+    }
+}

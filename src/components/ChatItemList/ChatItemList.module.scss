@@ -1,0 +1,41 @@
+.root {
+    position: relative;
+    height: 72px;
+    padding: 12px 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+
+    &:hover {
+        background-color: var(--wild-sand);
+        cursor: pointer;
+    }
+
+    &__time {
+        position: absolute;
+        top: 15px;
+        right: 16px;
+        font-size: 13px;
+    }
+
+    &__img {
+        border-radius: 4px;
+        margin-right: 16px;
+    }
+
+    &__heading {
+        font-weight: 700;
+        color: var(--tuatara);
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    &__text {
+        word-spacing: 1px;
+    }
+
+    &.active {
+        background-color: var(--link-water);
+    }
+}

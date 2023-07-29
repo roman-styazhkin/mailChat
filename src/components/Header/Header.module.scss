@@ -1,0 +1,15 @@
+.root {
+    height: var(--header-height);
+    border-bottom: 1px solid var(--mercury);
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+
+    &__title {
+        padding-left: 30px;
+        background-image: url("../../assets/images/message-header.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: contain;
+    }
+}

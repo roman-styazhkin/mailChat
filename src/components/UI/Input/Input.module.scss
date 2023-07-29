@@ -1,0 +1,27 @@
+.root {
+    padding: 24px;
+
+    &__wrapper {
+        margin-bottom: 4px;
+
+        textarea {
+            font: inherit;
+            padding: 10px 16px;
+            border: 1px solid var(--dawn);
+            height: 40px;
+            width: 100%;
+            outline: none;
+            border-radius: 4px;
+
+            &:focus {
+                box-shadow: 0 0 18px 0 rgba(34, 60, 80, 0.26);
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
