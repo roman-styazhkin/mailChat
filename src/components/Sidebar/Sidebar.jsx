@@ -1,7 +1,6 @@
 import styles from "./Sidebar.module.scss";
 import Title from "../UI/Title/Title";
 import ChatItemList from "../ChatItemList/ChatItemList";
-import SimpleBar from "simplebar-react";
 import { useSelector } from "react-redux";
 
 const Sidebar = () => {
@@ -16,17 +15,16 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <SimpleBar>
-        <div className={styles.root__list}>
-          {chats.map((item) => (
+      <div className={styles.root__list}>
+        {chats?.length &&
+          chats.map((item) => (
             <ChatItemList
               selected={currentChatId === item.id}
               key={item.id}
               {...item}
             />
           ))}
-        </div>
-      </SimpleBar>
+      </div>
     </aside>
   );
 };

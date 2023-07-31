@@ -5,7 +5,9 @@ import classNames from "classnames";
 const Message = ({ item }) => {
   const { message, created_at } = item;
   const { avatar, name, surname, you } = item.user;
+
   const time = dayjs(created_at).format("HH:mm");
+  const notYourMessage = !you;
 
   return (
     <div
@@ -13,12 +15,16 @@ const Message = ({ item }) => {
         [styles.my]: you,
       })}
     >
-      <img className={styles.root__photo} src={avatar} alt={name} />
+      {notYourMessage && (
+        <img className={styles.root__photo} src={avatar} alt={name} />
+      )}
 
       <div className={styles.root__content}>
-        <div className={styles.root__name}>
-          {name} {surname}
-        </div>
+        {notYourMessage && (
+          <div className={styles.root__name}>
+            {name} {surname}
+          </div>
+        )}
 
         <div className={styles.root__info}>
           <div className={styles.root__text}>{message}</div>

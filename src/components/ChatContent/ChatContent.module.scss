@@ -4,6 +4,7 @@
     width: 100%;
     height: calc(100vh - var(--chat-form-height) - var(--header-height));
     overflow: auto;
+    background-color: var(--app-bg-chat-content);
 
     &__timeGroup {
         position: relative;

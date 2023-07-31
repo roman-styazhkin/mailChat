@@ -2,11 +2,31 @@ import styles from "./ChatContent.module.scss";
 import Time from "../UI/Time/Time";
 import Message from "../Message/Message";
 import { useSelector } from "react-redux";
+import { useEffect, useRef } from "react";
+
+const sortChatMessages = (messages) => {
+  if (!Array.isArray(messages) || !messages.length) {
+    return [];
+  }
+
+  if (messages.length < 2) {
+    return messages;
+  }
+
+  return messages.slice().sort((a, b) => a.created_at - b.created_at);
+};
 
 const ChatContent = () => {
   const chatMessages = useSelector(
     (state) => state.currentMessages.chatMessages
   );
+  const bottomRef = useRef(null);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [chatMessages?.length]);
+
+  const sortedMessages = sortChatMessages(chatMessages);
 
   return (
     <div className={styles.root}>
@@ -16,11 +36,13 @@ const ChatContent = () => {
         </div>
 
         <div className={styles.root__list}>
-          {chatMessages?.length &&
-            chatMessages.map((item) => {
+          {sortedMessages?.length &&
+            sortedMessages.map((item) => {
               return <Message key={item.id} item={item} main={true} />;
             })}
         </div>
+
+        <div ref={bottomRef}></div>
       </div>
     </div>
   );

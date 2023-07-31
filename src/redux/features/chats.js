@@ -3,13 +3,13 @@ import axios from "axios";
 import { URLS } from "../../constants/urls";
 
 export const fetchChats = createAsyncThunk("chats/fetchChats", async () => {
-  const response = await axios.get(`${URLS.BASE}/${URLS.CHATS}`, {
-    headers: {
-      version: "0.0",
-    },
-  });
+  const request = `${URLS.BASE}/${URLS.CHATS}`;
 
-  const chats = response.data.response;
+  const response = await axios.get(
+    `https://64c68ba90a25021fde91c0fa.mockapi.io/chats`
+  );
+
+  const chats = response.data;
 
   return chats;
 });

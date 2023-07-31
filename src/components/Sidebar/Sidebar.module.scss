@@ -1,13 +1,14 @@
 .root {
     flex: none;
     width: 360px;
+    background-color: var(--app-theme);
 
     &__top {
         height: var(--header-height);
         padding: 0 16px;
         display: flex;
         align-items: center;
-        border-bottom: 1px solid var(--mercury);
+        border-bottom: 1px solid var(--app-border-color);
     }
 
     &__list {

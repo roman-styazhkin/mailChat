@@ -2,7 +2,7 @@ import styles from "./ChatItemList.module.scss";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import EllipsisText from "react-lines-ellipsis";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCurrentChatId } from "../../redux/features/chats";
 
 const ChatItemList = ({ selected, ...props }) => {

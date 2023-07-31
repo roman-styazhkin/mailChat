@@ -42,7 +42,9 @@
     "dayjs": "^1.11.9",
     "react-lines-ellipsis": "^0.15.3",
     "react-redux": "^8.1.1",
+    "react-select": "^5.7.4",
     "react-textarea-autosize": "^8.5.2",
+    "redux-persist": "^6.0.0",
     "sass": "^1.64.1",
     "simplebar-react": "^3.2.4"
   }

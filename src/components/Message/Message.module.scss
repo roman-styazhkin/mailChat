@@ -1,5 +1,5 @@
 .root {
-    color: var(--tuatara);
+    color: var(--app-text-message);
     display: flex;
     gap: 10px;
 
@@ -13,12 +13,13 @@
         font-size: 15px;
         line-height: 1;
         margin-bottom: 7px;
+        color: var(----app-heading-color);
     }
 
     &__info {
         position: relative;
         padding: 8px 12px;
-        background-color:var(--concrete);
+        background-color: var(--app-bg-message);
         max-width: 467px;
         border-radius: 4px;
         padding-right: 70px;
@@ -34,7 +35,7 @@
     }
 
     &__time {
-        color: var(--chicago);
+        color: var(--app-text-time-color);
         font-size: 12px;
         line-height: 9px;
         margin-right: 2px;

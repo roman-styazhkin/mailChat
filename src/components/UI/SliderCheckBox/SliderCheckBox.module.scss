@@ -1,0 +1,48 @@
+.root {
+    display: inline-block;
+    height: 30px;
+    position: relative;
+    width: 55px;
+
+    input {
+        display:none;
+
+        &:checked + .root__slider {
+            background-color: var(--app-bg-chat-content);
+        }
+
+        &:checked + .root__slider::before {
+            transform: translateX(22px);
+        }
+    }
+
+    &__slider {
+        background-color: #ccc;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .4s;
+
+        &::before {
+            background-color: rgb(107, 107, 107);
+            bottom: 3px;
+            content: "";
+            height: 23px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 23px;
+        }
+    }
+
+    &__round {
+        border-radius: 34px;
+
+        &::before {
+            border-radius: 50%;
+        }
+    }
+}

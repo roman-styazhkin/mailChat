@@ -6,14 +6,6 @@
     &__chat {
         position: relative;
         width: 100%;
-        border-left: 1px solid var(--silver);
-    }
-
-    &__form {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: var(--white);
+        border-left: 1px solid var(--app-border-color);
     }
 }
