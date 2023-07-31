@@ -1,12 +1,14 @@
 import styles from "./ChatForm.module.scss";
 import Input from "../UI/Input/Input";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const ChatForm = () => {
   const [messageQuery, setMessageQuery] = useState("");
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    if (!messageQuery.length) return;
 
     const newUserMessage = {
       created_at: Date.now(),

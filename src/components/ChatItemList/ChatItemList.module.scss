@@ -1,49 +1,49 @@
 .root {
-    position: relative;
-    height: 72px;
-    padding: 12px 16px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding-right: 50px;
-    background-color: var(--app-theme);
-    color: var(--app-text-color);
+  position: relative;
+  height: 72px;
+  padding: 12px 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+  background-color: var(--app-theme);
+  color: var(--app-text-color);
 
-    &:hover {
-        background-color: var(--app-hover-chat-bg);
-        cursor: pointer;
+  &:hover {
+    background-color: var(--app-hover-chat-bg);
+    cursor: pointer;
+  }
+
+  &__time {
+    position: absolute;
+    top: 15px;
+    right: 16px;
+    font-size: 13px;
+    color: var(--app-text-time-color);
+  }
+
+  &__img {
+    border-radius: 4px;
+    margin-right: 16px;
+  }
+
+  &__heading {
+    font-weight: 700;
+    color: var(--app-heading-color);
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  &__text {
+    word-spacing: 1px;
+  }
+
+  &.active {
+    background-color: var(--app-bg-active-chat);
+    color: var(--app-heading-color);
+
+    .root__time {
+      color: var(--app-heading-color);
     }
-
-    &__time {
-        position: absolute;
-        top: 15px;
-        right: 16px;
-        font-size: 13px;
-        color: var(--app-text-time-color);
-    }
-
-    &__img {
-        border-radius: 4px;
-        margin-right: 16px;
-    }
-
-    &__heading {
-        font-weight: 700;
-        color: var(--app-heading-color);
-        font-size: 15px;
-        line-height: 22px;
-    }
-
-    &__text {
-        word-spacing: 1px;
-    }
-
-    &.active {
-        background-color: var(--app-bg-active-chat);
-        color: var(--app-heading-color);
-
-        .root__time {
-            color: var(--app-heading-color);
-        }
-    }
+  }
 }

@@ -12,7 +12,7 @@ class Themes {
       "--app-border-color": "#e4e4e4",
       "--app-bg-message": "#f3f3f3",
       "--app-text-message": "#201f1e",
-      "--app-hover-chat-bg": "#282e33",
+      "--app-hover-chat-bg": "#f3f3f3",
     },
 
     dark: {
@@ -31,12 +31,10 @@ class Themes {
     },
   };
 
-  onToggleTheme = (theme, callback) => {
+  onToggleTheme = (theme) => {
     Object.entries(this.themes[theme]).forEach(([key, value]) => {
       document.body.style.setProperty(key, value);
     });
-
-    callback(theme === "dark" ? "light" : "dark");
   };
 }
 

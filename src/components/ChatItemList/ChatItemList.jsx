@@ -2,17 +2,27 @@ import styles from "./ChatItemList.module.scss";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import EllipsisText from "react-lines-ellipsis";
-import { useDispatch, useSelector } from "react-redux";
-import { setCurrentChatId } from "../../redux/features/chats";
+import { useDispatch } from "react-redux";
+import {
+  setCurrentChatId,
+  setCurrentChatName,
+} from "../../redux/features/chats";
+import { toggleVisibilitySidebar } from "../../redux/features/visibleSidebar";
 
 const ChatItemList = ({ selected, ...props }) => {
   const { id, title, avatar, last_message } = props;
   const time = dayjs(last_message.created_at).format("HH:mm");
   const dispatch = useDispatch();
 
+  const onSelectChatItem = () => {
+    dispatch(setCurrentChatName(title));
+    dispatch(setCurrentChatId(id));
+    dispatch(toggleVisibilitySidebar(false));
+  };
+
   return (
     <div
-      onClick={() => dispatch(setCurrentChatId(id))}
+      onClick={onSelectChatItem}
       className={classNames(styles.root, {
         [styles.active]: selected,
       })}

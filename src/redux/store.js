@@ -1,6 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import chatsReducer from "./features/chats";
-import currentMessagesSlice from "./features/currentMessages";
+import currentMessagesReducer from "./features/currentMessages";
+import themeReducer from "./features/theme";
+import visibleSidebarReducer from "./features/visibleSidebar";
+
 import {
   persistStore,
   persistReducer,
@@ -15,7 +18,9 @@ import storage from "redux-persist/lib/storage";
 
 const rootReducer = combineReducers({
   chats: chatsReducer,
-  currentMessages: currentMessagesSlice,
+  currentMessages: currentMessagesReducer,
+  themes: themeReducer,
+  visibleSidebar: visibleSidebarReducer,
 });
 
 const persistConfig = {
@@ -37,16 +42,3 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 export default store;
-
-// import { configureStore } from "@reduxjs/toolkit";
-// import chatsReducer from "./features/chats";
-// import currentMessagesSlice from "./features/currentMessages";
-
-// export const store = configureStore({
-//   reducer: {
-//     chats: chatsReducer,
-//     currentMessages: currentMessagesSlice,
-//   },
-// });
-
-// export default store;

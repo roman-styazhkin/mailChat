@@ -1,12 +1,45 @@
 import SliderCheckBox from "../UI/SliderCheckBox/SliderCheckBox";
-import Title from "../UI/Title/Title";
 import styles from "./Header.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import EllipsisText from "react-lines-ellipsis";
+import { toggleVisibilitySidebar } from "../../redux/features/visibleSidebar";
 
 const Header = () => {
+  const currentChatName = useSelector((state) => state.chats.currentChatName);
+  const dispatch = useDispatch();
+  const visible = useSelector((state) => state.visibleSidebar.visible);
+
+  const onToggleSidebar = () => {
+    dispatch(toggleVisibilitySidebar(!visible));
+  };
+
   return (
     <header className={styles.root}>
+      <button className={styles.root__prev} onClick={onToggleSidebar}>
+        <div className={styles.root__icon}>
+          <svg
+            width="16"
+            height="14"
+            viewBox="0 0 16 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M11.5858 6.00008L7.29289 1.70718L8.70711 0.292969L15.4142 7.00008L8.70711 13.7072L7.29289 12.293L11.5858 8.00008H0V6.00008H11.5858Z"
+              fill="var(--app-heading-color)"
+            />
+          </svg>
+        </div>
+      </button>
       <div className={styles.root__title}>
-        <Title>Great Project</Title>
+        <EllipsisText
+          text={currentChatName}
+          maxLine="1"
+          ellipsis="..."
+          trimRight
+        />
       </div>
 
       <SliderCheckBox />

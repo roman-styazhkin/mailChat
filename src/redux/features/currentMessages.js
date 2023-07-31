@@ -5,12 +5,7 @@ import { URLS } from "../../constants/urls";
 export const fetchChatMessagesById = createAsyncThunk(
   "users/fetchChatMessagesById",
   async (chatId) => {
-    const request = `${URLS.BASE}/${URLS.MESSAGES}?chat_id=${chatId}`;
-
-    const response = await axios.get(
-      `https://64c6910a0a25021fde91c7fc.mockapi.io/messages?chatId=${chatId}`
-    );
-
+    const response = await axios.get(`${URLS.MESSAGES}?chatId=${chatId}`);
     return response.data[0].messages;
   }
 );

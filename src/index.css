@@ -12,7 +12,7 @@
   --app-text-message: #201f1e;
   --app-hover-chat-bg: #282e33;
 
-  --app-theme: #282e33;
+  /* --app-theme: #282e33;
   --app-bg-chat: #282e33;
   --app-bg-chat-content: #18191d;
   --app-heading-color: #fff;
@@ -23,7 +23,7 @@
   --app-border-color: #18191d;
   --app-bg-message: #282e33;
   --app-text-message: rgba(255, 255, 255, 0.8);
-  --app-hover-chat-bg: #000;
+  --app-hover-chat-bg: #000; */
 }
 
 :root {
@@ -38,6 +38,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  transition: background-color linear 0.1s;
 }
 
 body {

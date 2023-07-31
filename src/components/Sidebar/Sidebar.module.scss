@@ -1,18 +1,32 @@
+@import "../../media.scss";
+
 .root {
-    flex: none;
-    width: 360px;
-    background-color: var(--app-theme);
+  flex: none;
+  width: 360px;
+  background-color: var(--app-theme);
 
-    &__top {
-        height: var(--header-height);
-        padding: 0 16px;
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid var(--app-border-color);
-    }
+  @include for-tablet-landscape-up {
+    display: none;
 
-    &__list {
-        overflow: auto;
-        height: calc(100vh - var(--header-height));
+    &.visible {
+      display: block;
     }
+  }
+
+  &__top {
+    height: var(--header-height);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--app-border-color);
+  }
+
+  &__list {
+    overflow: auto;
+    height: calc(100vh - var(--header-height));
+  }
+
+  @include for-phone-only {
+    width: 375px;
+  }
 }

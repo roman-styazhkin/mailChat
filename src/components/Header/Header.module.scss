@@ -1,17 +1,48 @@
-.root {
-    height: var(--header-height);
-    border-bottom: 1px solid var(--app-border-color);
-    padding: 0 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--app-theme);
+@import "../../media.scss";
 
-    &__title {
-        padding-left: 30px;
-        background-image: url("../../assets/images/message-header.svg");
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: contain;
+.root {
+  height: var(--header-height);
+  border-bottom: 1px solid var(--app-border-color);
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--app-theme);
+
+  &__prev {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
+    width: 40px;
+    height: 40px;
+    display: none;
+
+    &:hover {
+      opacity: 0.7;
     }
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    @include for-tablet-landscape-up {
+      display: block;
+    }
+  }
+
+  &__icon {
+    transform: rotate(180deg);
+  }
+
+  &__title {
+    padding-left: 30px;
+    background-image: url("../../assets/images/message-header.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-right: auto;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--app-heading-color);
+  }
 }

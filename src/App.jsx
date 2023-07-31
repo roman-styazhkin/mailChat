@@ -7,13 +7,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchChats } from "./redux/features/chats";
 import { fetchChatMessagesById } from "./redux/features/currentMessages";
 import ChatForm from "./components/ChatForm/ChatForm";
+import Themes from "./services/Themes";
 
 const App = () => {
   const dispatch = useDispatch();
   const currentChatId = useSelector((state) => state.chats.currentChatId);
+  const defaultTheme = useSelector((state) => state.themes.theme);
+  const { onToggleTheme } = new Themes();
 
   useEffect(() => {
     dispatch(fetchChats());
+    onToggleTheme(defaultTheme, () => 2);
   }, []);
 
   useEffect(() => {
