@@ -30,5 +30,6 @@ const messagesSlice = createSlice({
 });
 
 export const { addMyMessage } = messagesSlice.actions;
+export const selectChatMessages = (state) => state.currentMessages.chatMessages;
 
 export default messagesSlice.reducer;

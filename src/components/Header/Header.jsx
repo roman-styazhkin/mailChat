@@ -1,13 +1,17 @@
-import SliderCheckBox from "../UI/SliderCheckBox/SliderCheckBox";
 import styles from "./Header.module.scss";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  selectVisible,
+  toggleVisibilitySidebar,
+} from "../../redux/features/visibleSidebar";
+import SliderCheckBox from "../UI/SliderCheckBox/SliderCheckBox";
 import EllipsisText from "react-lines-ellipsis";
-import { toggleVisibilitySidebar } from "../../redux/features/visibleSidebar";
+import { selectCurrentChatName } from "../../redux/features/chats";
 
 const Header = () => {
-  const currentChatName = useSelector((state) => state.chats.currentChatName);
   const dispatch = useDispatch();
-  const visible = useSelector((state) => state.visibleSidebar.visible);
+  const currentChatName = useSelector(selectCurrentChatName);
+  const visible = useSelector(selectVisible);
 
   const onToggleSidebar = () => {
     dispatch(toggleVisibilitySidebar(!visible));

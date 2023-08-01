@@ -1,13 +1,13 @@
 import styles from "./ChatItemList.module.scss";
-import classNames from "classnames";
-import dayjs from "dayjs";
-import EllipsisText from "react-lines-ellipsis";
 import { useDispatch } from "react-redux";
 import {
   setCurrentChatId,
   setCurrentChatName,
 } from "../../redux/features/chats";
 import { toggleVisibilitySidebar } from "../../redux/features/visibleSidebar";
+import classNames from "classnames";
+import dayjs from "dayjs";
+import EllipsisText from "react-lines-ellipsis";
 
 const ChatItemList = ({ selected, ...props }) => {
   const { id, title, avatar, last_message } = props;
@@ -31,7 +31,7 @@ const ChatItemList = ({ selected, ...props }) => {
       <img
         className={styles.root__img}
         src={avatar}
-        alt="photo-test"
+        alt={title || ""}
         width={48}
         height={48}
       />

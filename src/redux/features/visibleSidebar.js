@@ -15,4 +15,5 @@ const visibleSidebarSlice = createSlice({
 });
 
 export const { toggleVisibilitySidebar } = visibleSidebarSlice.actions;
+export const selectVisible = (state) => state.visibleSidebar.visible;
 export default visibleSidebarSlice.reducer;

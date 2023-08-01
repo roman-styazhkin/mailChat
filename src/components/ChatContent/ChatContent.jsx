@@ -1,32 +1,21 @@
 import styles from "./ChatContent.module.scss";
+import { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
+import { selectChatMessages } from "../../redux/features/currentMessages";
 import Time from "../UI/Time/Time";
 import Message from "../Message/Message";
-import { useSelector } from "react-redux";
-import { useEffect, useRef } from "react";
-
-const sortChatMessages = (messages) => {
-  if (!Array.isArray(messages) || !messages.length) {
-    return [];
-  }
-
-  if (messages.length < 2) {
-    return messages;
-  }
-
-  return messages.slice().sort((a, b) => a.created_at - b.created_at);
-};
+import Messages from "../../services/Messages";
 
 const ChatContent = () => {
-  const chatMessages = useSelector(
-    (state) => state.currentMessages.chatMessages
-  );
+  const chatMessages = useSelector(selectChatMessages);
   const bottomRef = useRef(null);
+  const { sortChatMessages } = new Messages();
+  const sortedMessages = sortChatMessages(chatMessages);
+  const messagesCount = sortedMessages?.length;
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [chatMessages?.length]);
-
-  const sortedMessages = sortChatMessages(chatMessages);
+  }, [messagesCount]);
 
   return (
     <div className={styles.root}>
@@ -36,10 +25,8 @@ const ChatContent = () => {
         </div>
 
         <div className={styles.root__list}>
-          {sortedMessages?.length &&
-            sortedMessages.map((item) => {
-              return <Message key={item.id} item={item} main={true} />;
-            })}
+          {messagesCount &&
+            sortedMessages.map((item) => <Message key={item.id} item={item} />)}
         </div>
 
         <div ref={bottomRef}></div>

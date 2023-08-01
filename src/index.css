@@ -11,24 +11,12 @@
   --app-bg-message: #f3f3f3;
   --app-text-message: #201f1e;
   --app-hover-chat-bg: #282e33;
-
-  /* --app-theme: #282e33;
-  --app-bg-chat: #282e33;
-  --app-bg-chat-content: #18191d;
-  --app-heading-color: #fff;
-  --app-text-color: #8d939e;
-  --app-ui-components: #282e33;
-  --app-text-time-color: #8d939e;
-  --app-bg-active-chat: #009687;
-  --app-border-color: #18191d;
-  --app-bg-message: #282e33;
-  --app-text-message: rgba(255, 255, 255, 0.8);
-  --app-hover-chat-bg: #000; */
 }
 
 :root {
   --header-height: 64px;
   --chat-form-height: 50px;
+  --sidebar-width: 360px;
 }
 
 *,

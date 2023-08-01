@@ -3,12 +3,13 @@ import TextareaAutosize from "react-textarea-autosize";
 import MyButton from "../MyButton/MyButton";
 import sendMessage from "../../../assets/images/send-icon.svg";
 
-const Input = ({ onChange }) => {
+const Input = ({ onChange, value }) => {
   return (
     <div className={styles.root}>
       <div className={styles.root__inner}>
         <div className={styles.root__wrapper}>
           <TextareaAutosize
+            value={value}
             onChange={onChange}
             maxRows={5}
             style={{ resize: "none" }}

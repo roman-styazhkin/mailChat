@@ -2,7 +2,7 @@
 
 .root {
   flex: none;
-  width: 360px;
+  width: var(--sidebar-width);
   background-color: var(--app-theme);
 
   @include for-tablet-landscape-up {

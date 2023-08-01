@@ -1,5 +1,5 @@
-import dayjs from "dayjs";
 import styles from "./Message.module.scss";
+import dayjs from "dayjs";
 import classNames from "classnames";
 
 const Message = ({ item }) => {

@@ -35,5 +35,8 @@ const chatsSlice = createSlice({
 });
 
 export const { setCurrentChatId, setCurrentChatName } = chatsSlice.actions;
+export const selectCurrentChatName = (state) => state.chats.currentChatName;
+export const selectChats = (state) => state.chats.chats;
+export const selectCurrentChatId = (state) => state.chats.currentChatId;
 
 export default chatsSlice.reducer;

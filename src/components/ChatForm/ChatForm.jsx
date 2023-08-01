@@ -1,10 +1,12 @@
 import styles from "./ChatForm.module.scss";
-import Input from "../UI/Input/Input";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addMyMessage } from "../../redux/features/currentMessages";
+import Input from "../UI/Input/Input";
 
 const ChatForm = () => {
   const [messageQuery, setMessageQuery] = useState("");
+  const dispatch = useDispatch();
 
   const onFormSubmit = (e) => {
     e.preventDefault();
@@ -23,11 +25,17 @@ const ChatForm = () => {
         you: true,
       },
     };
+
+    dispatch(addMyMessage(newUserMessage));
+    setMessageQuery("");
   };
 
   return (
     <form className={styles.root} onSubmit={onFormSubmit}>
-      <Input onChange={(e) => setMessageQuery(e.target.value)} />
+      <Input
+        value={messageQuery}
+        onChange={(e) => setMessageQuery(e.target.value)}
+      />
     </form>
   );
 };
